@@ -1,3 +1,13 @@
+def display_menu():
+    """
+    Display the menu for the shopping list manager.
+    """
+    print("\nShopping List Manager")
+    print("1. Add an item")
+    print("2. Remove an item")
+    print("3. View the list")
+    print("4. Exit")
+
 def shopping_list_manager():
     """
     A simple shopping list manager that allows users to add, remove, and view items.
@@ -5,11 +15,7 @@ def shopping_list_manager():
     shopping_list = []
 
     while True:
-        print("\nShopping List Manager")
-        print("1. Add an item")
-        print("2. Remove an item")
-        print("3. View the list")
-        print("4. Exit")
+        display_menu()
 
         choice = input("Enter your choice (1-4): ").strip()
 
@@ -46,4 +52,3 @@ def shopping_list_manager():
 
 if __name__ == "__main__":
     shopping_list_manager()
-
