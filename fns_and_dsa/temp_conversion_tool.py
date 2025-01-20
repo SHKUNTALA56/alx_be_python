@@ -1,6 +1,6 @@
 # Constants for conversion factors
-CELSIUS_TO_FAHRENHEIT_FACTOR = 9/5
-FAHRENHEIT_TO_CELSIUS_FACTOR = 5/9
+CELSIUS_TO_FAHRENHEIT_FACTOR = 9/5  # Defining the factor for Celsius to Fahrenheit conversion
+FAHRENHEIT_TO_CELSIUS_FACTOR = 5/9  # Defining the factor for Fahrenheit to Celsius conversion
 
 def celsius_to_fahrenheit(celsius):
     """
@@ -44,7 +44,7 @@ def main():
                 else:
                     print("Invalid input. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
             except ValueError:
-                print("Invalid input. Please enter a valid numerical temperature.")
+                print("Invalid temperature. Please enter a numeric value.")  # Error message for invalid temperature
         elif choice == '2':
             print("Exiting the Temperature Conversion Tool. Goodbye!")
             break
