@@ -1,6 +1,9 @@
 # Assuming this is within your shopping_list_manager.py
 
 def display_header():
+    """
+    Displays the header for the shopping list manager.
+    """
     print(f"Shopping List Manager")
 
 # You can call the display_header function to display the message
@@ -16,6 +19,17 @@ def display_menu():
     print("3. View List")
     print("4. Exit")
 
+def add_item(shopping_list):
+    """
+    Adds an item to the shopping list.
+    """
+    item = input("Enter the item to add: ").strip()
+    if item:
+        shopping_list.append(item)
+        print(f"'{item}' has been added to your shopping list.")
+    else:
+        print("Item name cannot be empty.")
+
 def main():
     """
     Main function to manage the shopping list.
@@ -27,13 +41,8 @@ def main():
         choice = input("Enter your choice: ").strip()
 
         if choice == '1':
-            # Prompt for and add an item
-            item = input("Enter the name of the item to add: ").strip()
-            if item:
-                shopping_list.append(item)
-                print(f"'{item}' has been added to the list.")
-            else:
-                print("Item name cannot be empty.")
+            # Add an item
+            add_item(shopping_list)
 
         elif choice == '2':
             # Prompt for and remove an item
