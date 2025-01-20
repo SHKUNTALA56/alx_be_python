@@ -14,7 +14,7 @@ class BankAccount:
         if amount > 0:
             self.__account_balance += amount
         else:
-            print("Error: Deposit amount must be positive.")
+            raise ValueError("Deposit amount must be positive.")
 
     def withdraw(self, amount):
         """
@@ -25,11 +25,7 @@ class BankAccount:
         if amount > 0 and amount <= self.__account_balance:
             self.__account_balance -= amount
             return True
-        elif amount <= 0:
-            print("Error: Withdrawal amount must be positive.")
-        else:
-            print("Error: Insufficient funds.")
-        return False
+        return False  # Do not print any messages here; leave it to the caller.
 
     def display_balance(self):
         """
