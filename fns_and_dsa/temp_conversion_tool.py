@@ -1,6 +1,6 @@
 # Constants for conversion factors
-CELSIUS_TO_FAHRENHEIT_FACTOR = 9/5
-FAHRENHEIT_TO_CELSIUS_FACTOR = 5/9
+CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
+FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
 
 def celsius_to_fahrenheit(celsius):
     """
@@ -18,35 +18,38 @@ def fahrenheit_to_celsius(fahrenheit):
 
 def main():
     """
-    Main function to handle user input for temperature conversions.
+    Main function to handle temperature conversion.
     """
     print("Temperature Conversion Tool")
+
     while True:
         print("\nOptions:")
-        print("1. Convert Celsius to Fahrenheit")
-        print("2. Convert Fahrenheit to Celsius")
-        print("3. Exit")
+        print("1. Convert a Temperature")
+        print("2. Exit")
         choice = input("Enter your choice: ").strip()
 
         if choice == '1':
             try:
-                celsius = float(input("Enter temperature in Celsius: "))
-                fahrenheit = celsius_to_fahrenheit(celsius)
-                print(f"{celsius}°C is equal to {fahrenheit}°F.")
+                # Prompt user for temperature to convert
+                temperature = float(input("Enter the temperature to convert: ").strip())
+                # Prompt user to specify the temperature unit
+                unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
+
+                if unit == 'C':
+                    converted = celsius_to_fahrenheit(temperature)
+                    print(f"{temperature}°C is equal to {converted}°F.")
+                elif unit == 'F':
+                    converted = fahrenheit_to_celsius(temperature)
+                    print(f"{temperature}°F is equal to {converted}°C.")
+                else:
+                    print("Invalid input. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
             except ValueError:
-                print("Please enter a valid number.")
+                print("Invalid input. Please enter a valid numerical temperature.")
         elif choice == '2':
-            try:
-                fahrenheit = float(input("Enter temperature in Fahrenheit: "))
-                celsius = fahrenheit_to_celsius(fahrenheit)
-                print(f"{fahrenheit}°F is equal to {celsius}°C.")
-            except ValueError:
-                print("Please enter a valid number.")
-        elif choice == '3':
             print("Exiting the Temperature Conversion Tool. Goodbye!")
             break
         else:
-            print("Invalid choice. Please try again.")
+            print("Invalid choice. Please select '1' or '2'.")
 
 if __name__ == "__main__":
     main()
