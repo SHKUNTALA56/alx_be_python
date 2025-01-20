@@ -1,3 +1,11 @@
+# Assuming this is within your shopping_list_manager.py
+
+def display_header():
+    print(f"Shopping List Manager")
+
+# You can call the display_header function to display the message
+display_header()
+
 def display_menu():
     """
     Displays the menu for the shopping list manager.
